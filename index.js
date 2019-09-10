@@ -124,7 +124,7 @@ class Mesh {
 
 //Now let's make a cube
 var nodes = [
-        new Node(-1, -1, -1), //Top-Back-Left
+        new Node(-1, -0.5, -1), //Top-Back-Left
         new Node(1, -1, -1), //Top-Back-Right
         new Node(1, -1, 1), //Top-Front-Right
         new Node(-1, -1, 1), //Top-Front-Left
@@ -176,11 +176,13 @@ canvas.addEventListener("mousemove", (event) => {
 
     var diffX = mousePos[0] - pMousePos[0]
     var diffY = mousePos[1] - pMousePos[1]
-
-    cube3D.rotateY( diffX * ( Math.PI / 180 ) )
-    cube3D.rotateX( diffY * ( Math.PI / 180 ) )
-    ctx.clearRect(-canvas.width/2, -canvas.width/2, canvas.width, canvas.height)
-    cube3D.draw()
+    if (MOUSE_IS_PRESSED) {
+        cube3D.rotateY( diffX * ( Math.PI / 180 ) )
+        cube3D.rotateX( diffY * ( Math.PI / 180 ) )
+        
+        ctx.clearRect(-canvas.width/2, -canvas.width/2, canvas.width, canvas.height)
+        cube3D.draw()
+    }
 
     pMousePos = mousePos
 })
