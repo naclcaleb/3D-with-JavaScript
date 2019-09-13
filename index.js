@@ -124,7 +124,7 @@ class Mesh {
 
 //Now let's make a cube
 var nodes = [
-        new Node(-1, -0.5, -1), //Top-Back-Left
+        new Node(-1, -1, -1), //Top-Back-Left
         new Node(1, -1, -1), //Top-Back-Right
         new Node(1, -1, 1), //Top-Front-Right
         new Node(-1, -1, 1), //Top-Front-Left
